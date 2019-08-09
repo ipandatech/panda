@@ -3,13 +3,12 @@ title: 软件列表
 ---
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
-### 游戏
 
 </div>
-
 {% raw %}
 
 <div id="list">
+    <input class="search" v-model="filter"/>
     <div v-for="item in computedList">
     <template>
         <h3 :id="item.name"><a :href="'#' + item.name" class="headerlink" :title="item.name"></a>{{item.name}}</h3>
@@ -32,12 +31,19 @@ function getDataSetVue(data) {
 var app = new Vue({
     el: "#list",
     data: {
-      list: data
+      list: data,
+      filter: ''
     },
     computed: {
       computedList: function() {
         let data = {};
-        this.list.forEach(item => {
+        let list = this.list.filter(item => {
+            // // return [eval(`/${this.filter}/i`)].test(item.name);
+            // console.log(eval(`/${this.filter}/i`))
+            // console.log(`/${this.filter}/i`)
+            return item.name.indexOf(this.filter) !== -1;
+        });
+        list.forEach(item => {
           if (data[item.category]) {
             data[item.category].push(item);
           } else {
