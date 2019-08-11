@@ -8,7 +8,9 @@ title: 软件列表
 {% raw %}
 
 <div id="list">
-    <input class="search" v-model="filter"/>
+  <div class="search-wrapper">
+    <input class="search" placeholder="此处搜索你想要的mac app" v-model="filter"/>
+  </div>
     <div v-for="item in computedList">
     <template>
         <h3 :id="item.name"><a :href="'#' + item.name" class="headerlink" :title="item.name"></a>{{item.name}}</h3>

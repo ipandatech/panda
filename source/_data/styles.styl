@@ -10,6 +10,7 @@
         display:inline-block;
         img {
             width: 80px;
+            height 80px;
             margin: 0;
             display: inline-block;
             border: none;
@@ -34,4 +35,30 @@
             font-size: 13px;
             color: #404350;
         }
+}
+
+.search-wrapper {
+    width: 100%;
+    text-align: center;
+    .search {
+    width: 300px;
+    height 30px;
+    padding: 0 1.5em;
+    background: white;
+    border: 1px solid lightgray;
+    border-radius: 1.5em;
+    overflow: hidden;
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+    -webkit-tap-highlight-color: transparent;
+    }
+
+    .search:focus {
+        outline-offset: -2px;
+        outline: 0;
+    }
+
+    .search::-webkit-input-placeholder { /* WebKit browsers */
+        color: #999;
+    }
 }
