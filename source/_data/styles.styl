@@ -1,7 +1,7 @@
 .gallery {
     width: 100%;
     .img-item {
-        width: 250px;
+        width: 30%;
         height 120px;
         background: #fff;
         line-height: 15px;
@@ -32,8 +32,8 @@
     }
 
     .desc {
-            font-size: 13px;
-            color: #404350;
+            font-size: 10px;
+            color: #92a9b5;
         }
 }
 
@@ -41,7 +41,7 @@
     width: 100%;
     text-align: center;
     .search {
-    width: 300px;
+    width: 80%;
     height 30px;
     padding: 0 1.5em;
     background: white;
@@ -60,5 +60,13 @@
 
     .search::-webkit-input-placeholder { /* WebKit browsers */
         color: #999;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .gallery {
+        .img-item {
+            width: 50%
+        }
     }
 }
